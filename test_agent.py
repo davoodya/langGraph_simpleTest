@@ -1,5 +1,3 @@
-
-
 from schema import BusinessState
 from ai_agent import input_node, processing_node
 
@@ -36,7 +34,7 @@ def test_processing_node():
     state: BusinessState = {
         "input_data": {
             "today": {"revenue": 1200, "cost": 800, "customers": 40},
-            "yesterday": {"revenue": 1000, "cost": 700, "customers": 35}
+            "yesterday": {"revenue": 1000, "cost": 600, "customers": 30}
         },
         "metrics": {},
         "recommendation": ""

@@ -24,3 +24,13 @@ def processing_node(state: BusinessState) -> BusinessState:
     cac_change_pct = ((today_cac - yesterday_cac) / yesterday_cac) * 100 if yesterday_cac else 0
 
     # Save in State
+    state["metric"] = {
+        "profit": profit,
+        "revenue_change_pct": revenue_change_pct,
+        "cost_change_pct": cost_change_pct,
+        "today_cac": today_cac,
+        "yesterday_cac": yesterday_cac,
+        "cac_change_pct": cac_change_pct
+    }
+
+    return state

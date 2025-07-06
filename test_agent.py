@@ -13,7 +13,7 @@ input_data = {
         "customers": 35
     },
     "metrics": {},
-    "recommendation": ""
+    "recommendations": ""
 }
 
 def test_input_node():
@@ -23,7 +23,7 @@ def test_input_node():
             "yesterday": {"revenue": 1000, "cost": 700, "customers": 35}
         },
         "metrics": {},
-        "recommendation": ""
+        "recommendations": ""
     }
 
     result = input_node(state)
@@ -37,7 +37,7 @@ def test_processing_node():
             "yesterday": {"revenue": 1000, "cost": 600, "customers": 30}
         },
         "metrics": {},
-        "recommendation": ""
+        "recommendations": ""
     }
 
     # Running node

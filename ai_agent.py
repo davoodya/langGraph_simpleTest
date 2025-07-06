@@ -34,3 +34,7 @@ def processing_node(state: BusinessState) -> BusinessState:
     }
 
     return state
+
+def recommendation_node(state: BusinessState) -> BusinessState:
+    metrics = state["metrics"]
+    message = []

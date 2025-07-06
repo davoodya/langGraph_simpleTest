@@ -1,5 +1,5 @@
 from schema import BusinessState
-from langgraph.graph import StateGraph
+from langgraph.graph import StateGraph, END
 
 
 def input_node(state: BusinessState) -> BusinessState:
@@ -58,3 +58,10 @@ def recommendation_node(state: BusinessState) -> BusinessState:
     # Save in the State
     state["recommendations"] = "\n".join(messages)
     return state
+
+
+# Define the build graph agent
+def build_agent():
+    builder = StateGraph(BusinessState)
+
+

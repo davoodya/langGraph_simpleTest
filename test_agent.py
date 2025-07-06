@@ -75,8 +75,24 @@ def test_recommendation_node():
     assert "Sales" in rec
     print("Recommendation Node(3) Test passed!")
 
+def test_negative_values():
+    # New test for Negative Values in processing_node
+    negative_state: BusinessState = {
+        "input_data": {
+            "today": {"revenue": -500, "cost": 800, "customers": 40},
+            "yesterday": {"revenue": 1000, "cost": 700, "customers": 35}
+        },
+        "metrics": {},
+        "recommendations": ""
+    }
+
+    result = processing_node(negative_state)
+    assert result["metrics"]["profit"] == -1300
+    assert result["metrics"]["revenue_change_pct"] == -150.0  # (-500 - 1000)/1000 * 100
+    print("Processing Node(2) with Negative Value Test passed!")
 
 if __name__ == "__main__":
     test_input_node()
     test_processing_node()
+    test_negative_values()
     test_recommendation_node()

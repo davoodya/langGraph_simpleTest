@@ -64,4 +64,14 @@ def recommendation_node(state: BusinessState) -> BusinessState:
 def build_agent():
     builder = StateGraph(BusinessState)
 
+    builder.add_node("input", input_node)
+    builder.add_node("processing", processing_node)
+    builder.add_node("recommendation", recommendation_node)
+
+    # define the data passageway
+    builder.set_entry_point("input")
+    builder.add_edge("input", "processing")
+    builder.add_edge("processing", "recommendation")
+    builder.add_edge("recommendation", END)
+
 

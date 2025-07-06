@@ -26,26 +26,19 @@ It analyzes daily business data such as sales, costs, and customer counts to gen
 
 ---
 
-## Usage Guide
+## Locally Usage Guide
 
 ### 1. Install requirements
 
 ```bash
 pip install -r requirements.txt
 ```
-### 2. Run the Agent Stand-Alone
+### 2. Run the Agent Stand-Alone Locally
 ```bash
-python run_agent.py
+python run_agent_locally.py
 ```
 
-### 3. Ready for Run in LangGraph Studio
- This agent is fully functional and can be tested directly in LangGraph Studio using agent_studio.py.
-Use `agent_studio.py` for importing the full agent directly in LangGraph Studio.
-```bash
-python agent_studio.py
-```
-
-### 4. Running Tests
+### 3. Running Tests
 ```sh
 #Test Input Node
 python test_agent.py
@@ -53,14 +46,14 @@ python test_agent.py
 #Test full agent logic and output
 python test_full_agent.py
 ```
-### 5. Project Structure
+### 4. Project Structure
 ```bash
 AI-Business/
 │
 ├── ai_agent.py           # Main LangGraph agent with input, process, and recommendation nodes
 ├── schema.py             # Shared state structure using TypedDict
-├── run_agent.py          # Sample run with test data (CLI usage)
-├── agent_studio.py       # Clean agent runner for LangGraph Studio
+├── agent_studio.py          # Sample run with test data (CLI usage)
+├── run_agent_locally.py       # Clean agent runner for LangGraph Studio
 ├── test_agent.py         # Unit test for input node
 ├── test_full_agent.py    # Full flow test (metrics + recommendations)
 ├── requirements.txt      # Required Python dependencies
@@ -94,6 +87,25 @@ AI-Business/
 }
 
 ```
+## LangGraph Studio Usage Guide
+### 1. Set LangGraph Environment Variables
+first create a .env file in the root directory of the project and add the following lines:
+
+```txt   
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_API_KEY="PUT_YOUR_API_KEY_HERE"
+LANGSMITH_PROJECT="AIBusinessTesT"
+```
+Notes:
+1. `.env` file should be in the root directory of the project
+2. get API keys from [LangSmith](https://smith.langchain.com/)
+
+### 2. Run the LangGraph Studio Agent
+```bash
+python agent_studio.py
+```
+
 ## Author
 - Developed by: [Davood Yahay](https://github.com/davoodya)
 - Website: [davoodya.ir](https://davoodya.ir)

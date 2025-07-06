@@ -53,6 +53,19 @@ def test_processing_node():
 
     print("Processing Node(2) Test passed!")
 
+def test_recommendation_node():
+    state: BusinessState = {
+        "input_data": {},
+        "metrics": {
+            "profit": -200,
+            "revenue_change_pct": 10,
+            "cost_change_pct": 15,
+            "today_cac": 25,
+            "yesterday_cac": 20,
+            "cac_change_pct": 25
+        },
+        "recommendations": ""
+    }
 
 if __name__ == "__main__":
     test_input_node()

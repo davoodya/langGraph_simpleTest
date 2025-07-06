@@ -18,3 +18,9 @@ def processing_node(state: BusinessState) -> BusinessState:
 
     revenue_change_pct = ((today["revenue"] - yesterday["revenue"]) / yesterday["revenue"]) * 100
     cost_change_pct = ((today["cost"] - yesterday["cost"]) / yesterday["cost"]) * 100
+
+    today_cac = today["cost"] / today["customers"] if today["customers"] else 0
+    yesterday_cac = yesterday["cost"] / yesterday["customers"] if yesterday["customers"] else 0
+    cac_change_pct = ((today_cac - yesterday_cac) / yesterday_cac) * 100 if yesterday_cac else 0
+
+    # Save in State

@@ -41,7 +41,8 @@ def recommendation_node(state: BusinessState) -> BusinessState:
 
     # 1. Profit Checking
     if metrics["profit"] < 0:
-        messages.append("Profit is negative.\n Consider reducing operational costs.")
+        messages.append("Profit is negative.\n "
+                        "Consider reducing operational costs.")
 
     # 2. CAC growing checking
     if metrics["cac_change_pct"] > 20:
@@ -49,7 +50,8 @@ def recommendation_node(state: BusinessState) -> BusinessState:
                         "Invest in customer acquisition strategies or Review marketing campaigns .")
     # 3. Sales Growing checking
     if metrics["revenue_change_pct"] > 0:
-        messages.append("Sales have grown.\n Consider increasing advertising budget.")
+        messages.append("Sales have grown.\n "
+                        "Consider increasing advertising budget.")
 
     # 4. if Not messages means all metrics is OK
     if not messages:

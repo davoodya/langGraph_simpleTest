@@ -1,5 +1,5 @@
 from schema import BusinessState
-from ai_agent import input_node, processing_node
+from ai_agent import input_node, processing_node, recommendation_node
 
 input_data = {
     "today": {
@@ -67,6 +67,16 @@ def test_recommendation_node():
         "recommendations": ""
     }
 
+    result = recommendation_node(state)
+    rec = result["recommendations"]
+
+    assert "Profit" in rec
+    assert "CAC" in rec
+    assert "Sales" in rec
+    print("Recommendation Node(3) Test passed!")
+
+
 if __name__ == "__main__":
     test_input_node()
     test_processing_node()
+    test_recommendation_node()

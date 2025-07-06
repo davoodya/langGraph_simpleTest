@@ -14,7 +14,7 @@ input_data = {
         "cost1": 700,
         "customers": 35
     },
-    "metric": {},
+    "metrics": {},
     "recommendation": ""
 }
 
@@ -24,7 +24,7 @@ def test_input_node():
             "today": {"revenue": 1200, "cost": 800, "customers": 40},
             "yesterday": {"revenue": 1000, "cost": 700, "customers": 35}
         },
-        "metric": {},
+        "metrics": {},
         "recommendation": ""
     }
 
@@ -38,20 +38,20 @@ def test_processing_node():
             "today": {"revenue": 1200, "cost": 800, "customers": 40},
             "yesterday": {"revenue": 1000, "cost": 700, "customers": 35}
         },
-        "metric": {},
+        "metrics": {},
         "recommendation": ""
     }
 
     # Running node
     result = processing_node(state)
-    metric = result["metric"]
+    metrics = result["metrics"]
 
-    assert metric["profit"] == 400
-    assert round(metric["revenue_change_pct"], 1) == 20.0
-    assert round(metric["cost_change_pct"], 1) == 33.3
-    assert round(metric["today_cac"], 1) == 20.0
-    assert round(metric["yesterday_cac"], 1) == 20.0
-    assert round(metric["cac_change_pct"], 1) == 0.0
+    assert metrics["profit"] == 400
+    assert round(metrics["revenue_change_pct"], 1) == 20.0
+    assert round(metrics["cost_change_pct"], 1) == 33.3
+    assert round(metrics["today_cac"], 1) == 20.0
+    assert round(metrics["yesterday_cac"], 1) == 20.0
+    assert round(metrics["cac_change_pct"], 1) == 0.0
 
     print("Processing Node(2) Test passed!")
 

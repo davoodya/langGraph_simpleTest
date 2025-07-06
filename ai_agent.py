@@ -74,4 +74,8 @@ def build_agent():
     builder.add_edge("processing", "recommendation")
     builder.add_edge("recommendation", END)
 
+    # build the agent
+    return builder.compile()
+
+
 

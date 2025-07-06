@@ -24,3 +24,8 @@ def test_full_agent():
         "recommendations": ""
     }
 
+    # Run the agent and get the result & recommendations
+    result = agent.invoke(input_data)
+
+    metrics = result["metrics"]
+    recommendations = result["recommendations"]

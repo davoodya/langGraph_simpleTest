@@ -1,12 +1,8 @@
 from ai_agent import build_agent
 from schema import BusinessState
-import json
 
-# Create the agent
-agent = build_agent()
-
-# Test Data
-state: BusinessState = {
+# test input data to be used in LangGraph studio
+test_input: BusinessState = {
     "input_data": {
         "today": {"revenue": 1400, "cost": 1100, "customers": 50},
         "yesterday": {"revenue": 1200, "cost": 900, "customers": 45}
@@ -15,8 +11,11 @@ state: BusinessState = {
     "recommendations": ""
 }
 
-# Run the agent
-final_state = agent.invoke(state)
+# Build the LangGraph agent
+agent = build_agent()
 
-# Print the final state
-print("Final State: \n");    print(json.dumps(final_state, indent=2))
+# Run the agent
+if __name__ == "__main__":
+    final_state = agent.invoke(test_input)
+
+    print("\nFinal State:\n");    print(final_state)

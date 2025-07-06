@@ -41,7 +41,7 @@ def recommendation_node(state: BusinessState) -> BusinessState:
 
     # 1. Profit Checking
     if metrics["profit"] < 0:
-        messages.append("Profit is negative.\n "
+        messages.append("Profit is negative.\n"
                         "Consider reducing operational costs.")
 
     # 2. CAC growing checking

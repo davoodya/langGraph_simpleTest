@@ -51,8 +51,9 @@ def test_full_agent():
     assert math.isclose(metrics["cac_change_pct"], cac_change_pct, abs_tol=0.1)
 
     # 5. Check the recommendations
-    # Because profit is low assert the Profit is negative
-    assert "Profit is negative." in recommendations
+    # if profit is low assert the Profit is negative
+    if expected_profit < 0:
+        assert "Profit is negative" in recommendations
 
     # if CAC is growing assert CAC has increased significantly in recommendations
     if cac_change_pct > 20:
@@ -62,7 +63,7 @@ def test_full_agent():
     if revenue_change > 0:
         assert "Sales have grown" in recommendations
 
-    print("✅ Full Agent Logic & Recommendation Test passed!")
+    print("Full Agent Logic & Recommendation Test passed!")
 
 
 if __name__ == "__main__":

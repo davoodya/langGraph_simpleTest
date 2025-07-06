@@ -9,7 +9,7 @@ input_data = {
     },
     "yesterday": {
         "revenue": 1000,
-        "cost1": 700,
+        "cost": 700,
         "customers": 35
     },
     "metrics": {},

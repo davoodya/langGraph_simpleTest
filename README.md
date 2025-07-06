@@ -73,7 +73,7 @@ python test_full_agent.py
 ### 4. Project Structure
 ```bash
 AI-Business/
-│
+├── .env                   # Environment variables get from LangSmith Studio
 ├── ai_agent.py           # Main LangGraph agent with input, process, and recommendation nodes
 ├── schema.py             # Shared state structure using TypedDict
 ├── agent_studio.py          # Sample run with test data (CLI usage)

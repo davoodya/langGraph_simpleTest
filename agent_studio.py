@@ -4,10 +4,21 @@ load_dotenv()
 from ai_agent import build_agent
 from schema import BusinessState
 import json
-
 import os
-print("LangSmith Project:", os.getenv("LANGSMITH_PROJECT"))
-print("LangSmith Tracing:", os.getenv("LANGSMITH_TRACING"))
+
+# Validation for LangSmith Configuration
+langGraphProject = os.getenv("LANGSMITH_PROJECT")
+langGraphAPI = os.getenv("LANGSMITH_API_KEY")
+langGraphTracing = os.getenv("LANGSMITH_TRACING")
+
+if not langGraphProject or not langGraphAPI:
+    print("You don't have a '.env' file.\n"
+          "Please read README.md file, define API and other env variables and try again!")
+else:
+    print("LangGraph Project: ", langGraphProject)
+    print(f"LangGraph Submit: ", bool(langGraphAPI))
+    print("LangSmith Tracing: ", langGraphTracing)
+
 
 # Create the agent
 agent = build_agent()

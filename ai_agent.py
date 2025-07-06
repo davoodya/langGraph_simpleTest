@@ -54,3 +54,7 @@ def recommendation_node(state: BusinessState) -> BusinessState:
     # 4. if Not messages means all metrics is OK
     if not messages:
         messages.append("All metrics are within acceptable range. No action needed for this time.")
+
+    # Save in the State
+    state["recommendations"] = "\n".join(messages)
+    return state

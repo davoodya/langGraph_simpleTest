@@ -14,3 +14,10 @@ state: BusinessState = {
     "metrics": {},
     "recommendations": ""
 }
+
+# Run the agent
+final_state = agent.invoke(state)
+
+# Print the final state
+print("Final State: \n")
+print(json.dumps(final_state, indent=2))

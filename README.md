@@ -28,10 +28,10 @@ It analyzes daily business data such as sales, costs, and customer counts to gen
 
 ## LangGraph Studio Usage Guide
 ### 0. Create a Account on LangSmith and Create a Tracing Project
-you should create a project in LangSmith and get the project name and api key and other necessary environments variables from the project settings.
+you should create a project in [LangSmith](https://smith.langchain.com/) and get the project name and api key and other necessary environments variables from the project settings.
 
 ### 1. Set LangGraph Environment Variables
-then create a .env file in the root directory of the project and add the following lines:
+then create a `.env` file in the root directory of the project and add the following lines:
 
 ```txt   
 LANGSMITH_TRACING=true
@@ -39,9 +39,10 @@ LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_API_KEY="PUT_YOUR_API_KEY_HERE"
 LANGSMITH_PROJECT="AIBusinessTesT"
 ```
+
 Notes:
 1. `.env` file should be in the root directory of the project
-2. get API keys from [LangSmith](https://smith.langchain.com/)
+2. get API keys from [LangSmith](https://smith.langchain.com/) 
 
 ### 2. Run the LangGraph Studio Agent
 ```bash
